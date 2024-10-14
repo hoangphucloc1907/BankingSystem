@@ -19,9 +19,7 @@ namespace Banking.Views
 
 		private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Register register = new Register();
-			register.Show();
-			this.Hide();
+
 		}
 
 		private void Login_KeyDown(object sender, KeyEventArgs e)
@@ -37,9 +35,7 @@ namespace Banking.Views
 
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
-			Dashboard manage = new Dashboard();
-			manage.Show();
-			this.Hide();
+
 		}
 	}
 }

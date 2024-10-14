@@ -14,12 +14,6 @@ C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.pdb
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.genruntimeconfig.cache
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\ref\Banking.dll
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Properties.Resources.resources
-C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Register.resources
-C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.Deposit.resources
-C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.TransactionManagement.resources
-C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.Transfer.resources
-C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.Withdraw.resources
-C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.Dashboard.resources
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.Home.resources
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.BranchView.resources
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.EmployeeView.resources
@@ -32,3 +26,4 @@ C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\runtimes\unix
 C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.csproj.AssemblyReference.cache
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.csproj.Up2Date
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.sourcelink.json
