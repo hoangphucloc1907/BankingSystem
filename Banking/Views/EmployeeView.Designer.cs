@@ -32,22 +32,22 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            txtId = new TextBox();
+            txtUsername = new TextBox();
             txtName = new TextBox();
             txtPass = new TextBox();
             dataGridEmpl = new DataGridView();
             empId = new DataGridViewTextBoxColumn();
             empName = new DataGridViewTextBoxColumn();
+            empUsername = new DataGridViewTextBoxColumn();
             empPass = new DataGridViewTextBoxColumn();
             empRole = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             btnClear = new Button();
             btnDelete = new Button();
-            btnEdit = new Button();
-            btnAdd = new Button();
+            btnSave = new Button();
             groupBox2 = new GroupBox();
-            checkAdm = new RadioButton();
             checkEmp = new RadioButton();
+            checkAdm = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)dataGridEmpl).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -59,9 +59,9 @@
             employeeIdLabel.Font = new Font("Segoe UI", 20F);
             employeeIdLabel.Location = new Point(52, 35);
             employeeIdLabel.Name = "employeeIdLabel";
-            employeeIdLabel.Size = new Size(309, 72);
+            employeeIdLabel.Size = new Size(270, 72);
             employeeIdLabel.TabIndex = 0;
-            employeeIdLabel.Text = "EmployeeId";
+            employeeIdLabel.Text = "Username";
             // 
             // label1
             // 
@@ -82,7 +82,6 @@
             label2.Size = new Size(253, 72);
             label2.TabIndex = 2;
             label2.Text = "Password";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -93,15 +92,14 @@
             label3.Size = new Size(133, 72);
             label3.TabIndex = 3;
             label3.Text = "Role";
-            label3.Click += label3_Click;
             // 
-            // txtId
+            // txtUsername
             // 
-            txtId.Location = new Point(367, 46);
-            txtId.Multiline = true;
-            txtId.Name = "txtId";
-            txtId.Size = new Size(300, 61);
-            txtId.TabIndex = 4;
+            txtUsername.Location = new Point(367, 46);
+            txtUsername.Multiline = true;
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(300, 61);
+            txtUsername.TabIndex = 4;
             // 
             // txtName
             // 
@@ -125,14 +123,15 @@
             dataGridEmpl.AllowUserToDeleteRows = false;
             dataGridEmpl.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridEmpl.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridEmpl.Columns.AddRange(new DataGridViewColumn[] { empId, empName, empPass, empRole });
+            dataGridEmpl.Columns.AddRange(new DataGridViewColumn[] { empId, empName, empUsername, empPass, empRole });
             dataGridEmpl.Dock = DockStyle.Fill;
             dataGridEmpl.Location = new Point(0, 121);
             dataGridEmpl.Name = "dataGridEmpl";
+            dataGridEmpl.RowHeadersVisible = false;
             dataGridEmpl.RowHeadersWidth = 82;
             dataGridEmpl.Size = new Size(2534, 1408);
             dataGridEmpl.TabIndex = 11;
-            dataGridEmpl.CellContentClick += dataGridEmpl_CellContentClick;
+            dataGridEmpl.CellClick += dataGridEmpl_CellClick;
             // 
             // empId
             // 
@@ -143,10 +142,17 @@
             // 
             // empName
             // 
-            empName.DataPropertyName = "Name";
+            empName.DataPropertyName = "FullName";
             empName.HeaderText = "Employee Name";
             empName.MinimumWidth = 10;
             empName.Name = "empName";
+            // 
+            // empUsername
+            // 
+            empUsername.DataPropertyName = "UserName";
+            empUsername.HeaderText = "Username";
+            empUsername.MinimumWidth = 10;
+            empUsername.Name = "empUsername";
             // 
             // empPass
             // 
@@ -166,8 +172,7 @@
             // 
             groupBox1.Controls.Add(btnClear);
             groupBox1.Controls.Add(btnDelete);
-            groupBox1.Controls.Add(btnEdit);
-            groupBox1.Controls.Add(btnAdd);
+            groupBox1.Controls.Add(btnSave);
             groupBox1.Dock = DockStyle.Bottom;
             groupBox1.Location = new Point(0, 1379);
             groupBox1.Name = "groupBox1";
@@ -177,40 +182,33 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(1215, 53);
+            btnClear.Location = new Point(812, 53);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(397, 76);
             btnClear.TabIndex = 3;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(812, 53);
+            btnDelete.Location = new Point(409, 53);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(397, 76);
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // btnEdit
+            // btnSave
             // 
-            btnEdit.Location = new Point(409, 53);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(397, 76);
-            btnEdit.TabIndex = 1;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(6, 53);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(397, 76);
-            btnAdd.TabIndex = 0;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
+            btnSave.Location = new Point(6, 53);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(397, 76);
+            btnSave.TabIndex = 0;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // groupBox2
             // 
@@ -218,7 +216,7 @@
             groupBox2.Controls.Add(checkAdm);
             groupBox2.Controls.Add(label1);
             groupBox2.Controls.Add(txtName);
-            groupBox2.Controls.Add(txtId);
+            groupBox2.Controls.Add(txtUsername);
             groupBox2.Controls.Add(employeeIdLabel);
             groupBox2.Controls.Add(txtPass);
             groupBox2.Controls.Add(label2);
@@ -230,17 +228,6 @@
             groupBox2.TabIndex = 13;
             groupBox2.TabStop = false;
             // 
-            // checkAdm
-            // 
-            checkAdm.AutoSize = true;
-            checkAdm.Location = new Point(2344, 38);
-            checkAdm.Name = "checkAdm";
-            checkAdm.Size = new Size(115, 36);
-            checkAdm.TabIndex = 11;
-            checkAdm.TabStop = true;
-            checkAdm.Text = "Admin";
-            checkAdm.UseVisualStyleBackColor = true;
-            // 
             // checkEmp
             // 
             checkEmp.AutoSize = true;
@@ -251,6 +238,17 @@
             checkEmp.TabStop = true;
             checkEmp.Text = "Employee";
             checkEmp.UseVisualStyleBackColor = true;
+            // 
+            // checkAdm
+            // 
+            checkAdm.AutoSize = true;
+            checkAdm.Location = new Point(2344, 38);
+            checkAdm.Name = "checkAdm";
+            checkAdm.Size = new Size(115, 36);
+            checkAdm.TabIndex = 11;
+            checkAdm.TabStop = true;
+            checkAdm.Text = "Admin";
+            checkAdm.UseVisualStyleBackColor = true;
             // 
             // EmployeeView
             // 
@@ -277,21 +275,21 @@
 		private Label label1;
 		private Label label2;
 		private Label label3;
-		private TextBox txtId;
+		private TextBox txtUsername;
 		private TextBox txtName;
 		private TextBox txtPass;
 		private DataGridView dataGridEmpl;
 		private GroupBox groupBox1;
 		private Button btnClear;
 		private Button btnDelete;
-		private Button btnEdit;
-		private Button btnAdd;
+		private Button btnSave;
 		private GroupBox groupBox2;
-		private DataGridViewTextBoxColumn empId;
-		private DataGridViewTextBoxColumn empName;
-		private DataGridViewTextBoxColumn empPass;
-		private DataGridViewTextBoxColumn empRole;
         private RadioButton checkEmp;
         private RadioButton checkAdm;
+        private DataGridViewTextBoxColumn empId;
+        private DataGridViewTextBoxColumn empName;
+        private DataGridViewTextBoxColumn empUsername;
+        private DataGridViewTextBoxColumn empPass;
+        private DataGridViewTextBoxColumn empRole;
     }
 }
