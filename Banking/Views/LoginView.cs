@@ -16,13 +16,13 @@ namespace Banking.Views
     {
         private readonly EmployeeController _employeeController;
 
-        public event EventHandler LoginSuccessful;
-        private Home _homeForm;
+        public event EventHandler? LoginSuccessful;
+        private Home? _homeForm;
 
         public LoginView()
         {
             InitializeComponent();
-            _employeeController = new EmployeeController("Data Source=DESKTOP-CS11CFJ\\SQLEXPRESS;Initial Catalog=BankSystem;Integrated Security=True;");
+            _employeeController = new EmployeeController();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -29,21 +29,17 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
+            txtCity = new TextBox();
+            txtAddress = new TextBox();
+            txtName = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             dataGridViewBranch = new DataGridView();
-            branchId = new DataGridViewTextBoxColumn();
-            branchName = new DataGridViewTextBoxColumn();
-            branchAddress = new DataGridViewTextBoxColumn();
-            branchCity = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             btnClear = new Button();
             btnDelete = new Button();
             btnSave = new Button();
-            txtName = new TextBox();
-            txtAddress = new TextBox();
-            txtCity = new TextBox();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewBranch).BeginInit();
             groupBox1.SuspendLayout();
@@ -63,6 +59,30 @@
             groupBox2.Size = new Size(2534, 143);
             groupBox2.TabIndex = 14;
             groupBox2.TabStop = false;
+            // 
+            // txtCity
+            // 
+            txtCity.Font = new Font("Segoe UI", 10F);
+            txtCity.Location = new Point(1846, 65);
+            txtCity.Name = "txtCity";
+            txtCity.Size = new Size(327, 43);
+            txtCity.TabIndex = 6;
+            // 
+            // txtAddress
+            // 
+            txtAddress.Font = new Font("Segoe UI", 10F);
+            txtAddress.Location = new Point(1133, 70);
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(327, 43);
+            txtAddress.TabIndex = 5;
+            // 
+            // txtName
+            // 
+            txtName.Font = new Font("Segoe UI", 10F);
+            txtName.Location = new Point(348, 65);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(327, 43);
+            txtName.TabIndex = 4;
             // 
             // label1
             // 
@@ -98,37 +118,14 @@
             // 
             dataGridViewBranch.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewBranch.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewBranch.Columns.AddRange(new DataGridViewColumn[] { branchId, branchName, branchAddress, branchCity });
             dataGridViewBranch.Dock = DockStyle.Fill;
             dataGridViewBranch.Location = new Point(0, 143);
             dataGridViewBranch.Name = "dataGridViewBranch";
+            dataGridViewBranch.RowHeadersVisible = false;
             dataGridViewBranch.RowHeadersWidth = 82;
             dataGridViewBranch.Size = new Size(2534, 1386);
             dataGridViewBranch.TabIndex = 15;
-            // 
-            // branchId
-            // 
-            branchId.HeaderText = "Branch Id";
-            branchId.MinimumWidth = 10;
-            branchId.Name = "branchId";
-            // 
-            // branchName
-            // 
-            branchName.HeaderText = "Branch Name";
-            branchName.MinimumWidth = 10;
-            branchName.Name = "branchName";
-            // 
-            // branchAddress
-            // 
-            branchAddress.HeaderText = "Address";
-            branchAddress.MinimumWidth = 10;
-            branchAddress.Name = "branchAddress";
-            // 
-            // branchCity
-            // 
-            branchCity.HeaderText = "City";
-            branchCity.MinimumWidth = 10;
-            branchCity.Name = "branchCity";
+            dataGridViewBranch.CellClick += dataGridViewBranch_CellClick;
             // 
             // groupBox1
             // 
@@ -151,6 +148,7 @@
             btnClear.TabIndex = 3;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -161,6 +159,7 @@
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnSave
             // 
@@ -171,30 +170,7 @@
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
-            // 
-            // txtName
-            // 
-            txtName.Font = new Font("Segoe UI", 10F);
-            txtName.Location = new Point(348, 65);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(327, 43);
-            txtName.TabIndex = 4;
-            // 
-            // txtAddress
-            // 
-            txtAddress.Font = new Font("Segoe UI", 10F);
-            txtAddress.Location = new Point(1133, 70);
-            txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(327, 43);
-            txtAddress.TabIndex = 5;
-            // 
-            // txtCity
-            // 
-            txtCity.Font = new Font("Segoe UI", 10F);
-            txtCity.Location = new Point(1846, 65);
-            txtCity.Name = "txtCity";
-            txtCity.Size = new Size(327, 43);
-            txtCity.TabIndex = 6;
+            btnSave.Click += btnSave_Click;
             // 
             // BranchView
             // 
@@ -227,10 +203,6 @@
 		private Label label3;
 		private TextBox textBox3;
 		private DataGridView dataGridViewBranch;
-		private DataGridViewTextBoxColumn branchId;
-		private DataGridViewTextBoxColumn branchName;
-		private DataGridViewTextBoxColumn branchAddress;
-		private DataGridViewTextBoxColumn branchCity;
         private GroupBox groupBox1;
         private Button btnClear;
         private Button btnDelete;

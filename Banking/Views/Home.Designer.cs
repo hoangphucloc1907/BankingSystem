@@ -122,12 +122,14 @@
             createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
             createCustomerToolStripMenuItem.Size = new Size(360, 44);
             createCustomerToolStripMenuItem.Text = "Create Customer";
+            createCustomerToolStripMenuItem.Click += createCustomerToolStripMenuItem_Click;
             // 
             // createAccountToolStripMenuItem
             // 
             createAccountToolStripMenuItem.Name = "createAccountToolStripMenuItem";
             createAccountToolStripMenuItem.Size = new Size(360, 44);
             createAccountToolStripMenuItem.Text = "Create Account";
+            createAccountToolStripMenuItem.Click += createAccountToolStripMenuItem_Click;
             // 
             // depositToolStripMenuItem
             // 

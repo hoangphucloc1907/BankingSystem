@@ -1,58 +1,195 @@
 ﻿using Banking.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
+using Banking.Utils;
+using Org.BouncyCastle.Crypto;
+using Org.BouncyCastle.Crypto.Generators;
+using Org.BouncyCastle.Crypto.Parameters;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Banking.Controllers
 {
-    internal class EmployeeController
+    internal class EmployeeController : IController
     {
-        private readonly string connectionString;
+        private readonly DatabaseHelper _databaseHelper;
 
-        public EmployeeController(string connectionString)
+        public List<IModel> Items { get; private set; }
+
+        public EmployeeController()
         {
-            this.connectionString = connectionString;
+            _databaseHelper = new DatabaseHelper();
+            Items = new List<IModel>();
         }
 
-        public DataTable LoadEmployeeData()
+        public bool Create(IModel model)
         {
-            string query = "SELECT id, name, role FROM Employee";
-            DataTable dataTable = new DataTable();
+            if (model is not Employee employee) return false;
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        dataTable.Load(reader);
-                    }
-                }
-            }
-            return dataTable;
+            // Hash the password
+            var passwordHash = HashPassword(employee.Password);
+
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("INSERT INTO Employee (FullName, Username, Password, Role, IsDeleted) VALUES (@FullName, @Username, @Password, @Role, @IsDeleted)", connection);
+            command.Parameters.AddWithValue("@FullName", employee.FullName);
+            command.Parameters.AddWithValue("@Username", employee.Username);
+            command.Parameters.AddWithValue("@Password", passwordHash);
+            command.Parameters.AddWithValue("@Role", employee.Role);
+            command.Parameters.AddWithValue("@IsDeleted", employee.IsDeleted);
+
+            connection.Open();
+            return command.ExecuteNonQuery() > 0;
         }
 
-        public bool Create(Employee employee)
+        private string HashPassword(string password)
         {
-            string query = "INSERT INTO Employee (name, password, role) VALUES (@name, @password, @role)";
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@name", employee.Name);
-                    command.Parameters.AddWithValue("@password", employee.Password);
-                    command.Parameters.AddWithValue("@role", employee.Role);
+            var generator = new Pkcs5S2ParametersGenerator();
+            generator.Init(PbeParametersGenerator.Pkcs5PasswordToBytes(password.ToCharArray()), new byte[16], 1000);
+            var key = (KeyParameter)generator.GenerateDerivedMacParameters(256);
+            return Convert.ToBase64String(key.GetKey());
+        }
 
-                    connection.Open();
-                    int result = command.ExecuteNonQuery();
-                    return result > 0;
+        public bool Update(IModel model)
+        {
+            if (model is not Employee employee) return false;
+
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("UPDATE Employee SET FullName = @FullName, Username = @Username, Password = @Password, Role = @Role, IsDeleted = @IsDeleted WHERE Id = @Id", connection);
+            command.Parameters.AddWithValue("@Id", employee.Id);
+            command.Parameters.AddWithValue("@FullName", employee.FullName);
+            command.Parameters.AddWithValue("@Username", employee.Username);
+            command.Parameters.AddWithValue("@Password", employee.Password);
+            command.Parameters.AddWithValue("@Role", employee.Role);
+            command.Parameters.AddWithValue("@IsDeleted", employee.IsDeleted);
+
+            connection.Open();
+            return command.ExecuteNonQuery() > 0;
+        }
+
+        public bool Delete(object id)
+        {
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("DELETE FROM Employee WHERE Id = @Id", connection);
+            command.Parameters.AddWithValue("@Id", id);
+
+            connection.Open();
+            return command.ExecuteNonQuery() > 0;
+        }
+
+        public IModel? Read(object id)
+        {
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("SELECT * FROM Employee WHERE Id = @Id", connection);
+            command.Parameters.AddWithValue("@Id", id);
+
+            connection.Open();
+            using var reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Employee
+                {
+                    Id = (int)reader["Id"],
+                    FullName = (string)reader["FullName"],
+                    Username = (string)reader["Username"],
+                    Password = (string)reader["Password"],
+                    Role = (string)reader["Role"],
+                    IsDeleted = (bool)reader["IsDeleted"]
+                };
+            }
+            return null;
+        }
+
+        public bool Load()
+        {
+            Items.Clear();
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("SELECT * FROM Employee", connection);
+
+            connection.Open();
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                Items.Add(new Employee
+                {
+                    Id = (int)reader["Id"],
+                    FullName = (string)reader["FullName"],
+                    Username = (string)reader["Username"],
+                    Password = (string)reader["Password"],
+                    Role = (string)reader["Role"],
+                    IsDeleted = (bool)reader["IsDeleted"]
+                });
+            }
+            return Items.Count > 0;
+        }
+
+        public bool Load(object id)
+        {
+            var employee = Read(id);
+            if (employee != null)
+            {
+                Items.Clear();
+                Items.Add(employee);
+                return true;
+            }
+            return false;
+        }
+
+        public bool IsExist(object id)
+        {
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("SELECT COUNT(*) FROM Employee WHERE Id = @Id", connection);
+            command.Parameters.AddWithValue("@Id", id);
+
+            connection.Open();
+            return (int)command.ExecuteScalar() > 0;
+        }
+
+        public bool IsExist(IModel model)
+        {
+            if (model is not Employee employee) return false;
+
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("SELECT COUNT(*) FROM Employee WHERE Username = @Username", connection);
+            command.Parameters.AddWithValue("@Username", employee.Username);
+
+            connection.Open();
+            return (int)command.ExecuteScalar() > 0;
+        }
+
+        public int? Login(Employee employee)
+        {
+            using var connection = _databaseHelper.GetConnection();
+            using var command = new SqlCommand("SELECT Id, Password FROM Employee WHERE Username = @Username", connection);
+            command.Parameters.AddWithValue("@Username", employee.Username);
+
+            connection.Open();
+            using var reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                int userId = reader.GetInt32(0);
+                string storedPasswordHash = reader.GetString(1);
+                if (VerifyPassword(employee.Password, storedPasswordHash))
+                {
+                    return userId;
                 }
             }
+
+            return null;
+        }
+
+        private bool VerifyPassword(string password, string storedPasswordHash)
+        {
+            var generator = new Pkcs5S2ParametersGenerator();
+            generator.Init(PbeParametersGenerator.Pkcs5PasswordToBytes(password.ToCharArray()), new byte[16], 1000);
+            var key = (KeyParameter)generator.GenerateDerivedMacParameters(256);
+            var passwordHash = Convert.ToBase64String(key.GetKey());
+
+            return passwordHash == storedPasswordHash;
+        }
+
+        public bool Upsert(IModel model)
+        {
+            if (model is not Employee employee) return false;
+
+            return IsExist(employee.Id) ? Update(employee) : Create(employee);
         }
     }
 }

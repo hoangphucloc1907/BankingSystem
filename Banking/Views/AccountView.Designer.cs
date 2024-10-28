@@ -28,20 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            dataGridViewAccount = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAccount).BeginInit();
             SuspendLayout();
+            // 
+            // dataGridViewAccount
+            // 
+            dataGridViewAccount.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewAccount.Dock = DockStyle.Fill;
+            dataGridViewAccount.Location = new Point(0, 0);
+            dataGridViewAccount.Name = "dataGridViewAccount";
+            dataGridViewAccount.RowHeadersVisible = false;
+            dataGridViewAccount.RowHeadersWidth = 82;
+            dataGridViewAccount.Size = new Size(2534, 1529);
+            dataGridViewAccount.TabIndex = 16;
             // 
             // AccountView
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2534, 1529);
+            Controls.Add(dataGridViewAccount);
             Name = "AccountView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AccountView";
             WindowState = FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewAccount).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dataGridViewAccount;
     }
 }

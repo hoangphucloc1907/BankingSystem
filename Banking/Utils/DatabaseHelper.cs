@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace Banking.Utils
 {
@@ -12,9 +13,17 @@ namespace Banking.Utils
     {
         private readonly string _connectionString;
 
-        public DatabaseHelper(string connectionString)
+        public DatabaseHelper()
         {
-            _connectionString = connectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         }
+        public SqlConnection GetConnection()
+        {
+            return new SqlConnection(_connectionString);
+        }
+
+
+
+        // Add your database helper methods here
     }
 }

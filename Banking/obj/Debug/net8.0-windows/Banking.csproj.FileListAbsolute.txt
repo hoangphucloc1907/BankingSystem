@@ -27,3 +27,14 @@ C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\runtimes\win\
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.csproj.AssemblyReference.cache
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.csproj.Up2Date
 C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.sourcelink.json
+C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\BouncyCastle.Crypto.dll
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.AccountView.resources
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.CustomerView.resources
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.DepositView.resources
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.TransactionView.resources
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.WithdrawView.resources
+C:\Loc\Subject\.net\BankingSystem\Banking\obj\Debug\net8.0-windows\Banking.Views.TransactionLogView.resources
+C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\Banking.dll.config
+C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Loc\Subject\.net\BankingSystem\Banking\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll

@@ -39,12 +39,16 @@
             groupBox1 = new GroupBox();
             saveBtn = new Button();
             closeBtn = new Button();
+            descriptionTxt = new TextBox();
+            label2 = new Label();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(descriptionTxt);
+            groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(accNameTxt);
             groupBox2.Controls.Add(label1);
@@ -99,6 +103,7 @@
             accNumberCb.Name = "accNumberCb";
             accNumberCb.Size = new Size(242, 40);
             accNumberCb.TabIndex = 1;
+            accNumberCb.SelectedIndexChanged += accNumberCb_SelectedIndexChanged;
             // 
             // amountTxt
             // 
@@ -134,6 +139,7 @@
             saveBtn.TabIndex = 5;
             saveBtn.Text = "Save";
             saveBtn.UseVisualStyleBackColor = true;
+            saveBtn.Click += saveBtn_Click;
             // 
             // closeBtn
             // 
@@ -143,6 +149,22 @@
             closeBtn.TabIndex = 6;
             closeBtn.Text = "Close";
             closeBtn.UseVisualStyleBackColor = true;
+            // 
+            // descriptionTxt
+            // 
+            descriptionTxt.Location = new Point(309, 349);
+            descriptionTxt.Name = "descriptionTxt";
+            descriptionTxt.Size = new Size(242, 39);
+            descriptionTxt.TabIndex = 12;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(13, 349);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 32);
+            label2.TabIndex = 11;
+            label2.Text = "Content";
             // 
             // DepositView
             // 
@@ -174,5 +196,7 @@
         private GroupBox groupBox1;
         private Button saveBtn;
         private Button closeBtn;
+        private TextBox descriptionTxt;
+        private Label label2;
     }
 }

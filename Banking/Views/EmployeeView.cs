@@ -22,30 +22,24 @@ namespace Banking.Views
         public EmployeeView()
         {
             InitializeComponent();
-            string connectionString = "Data Source=DESKTOP-CS11CFJ\\SQLEXPRESS;Initial Catalog=BankSystem;Integrated Security=True;";
-            _employeeController = new EmployeeController(connectionString);
+            _employeeController = new EmployeeController();
             LoadEmployeeData();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string role = checkAdm.Checked ? "Admin" : "Employee";
-            Employee newEmployee = new Employee
+            if (ValidateInput())
             {
-                Username = txtUsername.Text,
-                FullName = txtName.Text,
-                Password = txtPass.Text,
-                Role = role
-            };
-
-            if (_employeeController.Create(newEmployee))
-            {
-                MessageBox.Show("Employee added successfully!");
-                LoadEmployeeData();
-            }
-            else
-            {
-                MessageBox.Show("Failed to add employee.");
+                var newEmployee = CreateEmployeeFromInput();
+                if (_employeeController.Create(newEmployee))
+                {
+                    MessageBox.Show("Employee added successfully!");
+                    LoadEmployeeData();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add employee.");
+                }
             }
         }
 
@@ -54,7 +48,7 @@ namespace Banking.Views
             try
             {
                 _employeeController.Load();
-                DataTable dataTable = new DataTable();
+                var dataTable = new DataTable();
                 dataTable.Columns.Add("Id", typeof(int));
                 dataTable.Columns.Add("FullName", typeof(string));
                 dataTable.Columns.Add("Username", typeof(string));
@@ -77,60 +71,40 @@ namespace Banking.Views
 
         private void dataGridEmpl_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Ensure the click is on a valid row
+            if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dataGridEmpl.Rows[e.RowIndex];
-
+                var row = dataGridEmpl.Rows[e.RowIndex];
                 _employeeId = Convert.ToInt32(row.Cells[0].Value);
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtUsername.Text = row.Cells[2].Value.ToString();
                 txtPass.Text = row.Cells[3].Value.ToString();
-
-                string role = row.Cells[4].Value.ToString();
-                checkAdm.Checked = role == "Admin";
-                checkEmp.Checked = role == "Employee";
+                checkAdm.Checked = row.Cells[4].Value.ToString() == "Admin";
+                checkEmp.Checked = row.Cells[4].Value.ToString() == "Employee";
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string role = checkAdm.Checked ? "Admin" : "Employee";
+            if (ValidateInput())
+            {
+                var employee = CreateEmployeeFromInput();
+                employee.Id = _employeeId;
 
-            if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPass.Text))
-            {
-                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            Employee employee = new Employee
-            {
-                Id = _employeeId, // Assuming _employeeId is set correctly when updating an existing employee.
-                Username = txtUsername.Text.Trim(),
-                FullName = txtName.Text.Trim(),
-                Password = txtPass.Text.Trim(),
-                Role = role
-            };
-
-            // Use Upsert instead of Update
-            if (_employeeController.Upsert(employee))
-            {
-                MessageBox.Show("Employee saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadEmployeeData();
-            }
-            else
-            {
-                MessageBox.Show("Failed to save employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (_employeeController.Upsert(employee))
+                {
+                    MessageBox.Show("Employee saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadEmployeeData();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to save employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            _employeeId = 0; 
-            txtName.Clear();
-            txtUsername.Clear();
-            txtPass.Clear();
-            checkEmp.Checked = false;
-            checkAdm.Checked = false;
+            ClearInputFields();
         }
 
         public void SetDataToText(object item)
@@ -147,14 +121,7 @@ namespace Banking.Views
 
         public void GetDataFromText()
         {
-            string role = checkAdm.Checked ? "Admin" : "Employee";
-            Employee employee = new Employee
-            {
-                FullName = txtName.Text,
-                Username = txtUsername.Text,
-                Password = txtPass.Text,
-                Role = role
-            };
+            var employee = CreateEmployeeFromInput();
             // This method can be used to get data from text fields and create/update an employee object.
         }
 
@@ -173,13 +140,44 @@ namespace Banking.Views
                 {
                     MessageBox.Show("Employee deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadEmployeeData();
-                    btnClear_Click(sender, e); // Clear the form after deletion
+                    ClearInputFields();
                 }
                 else
                 {
                     MessageBox.Show("Failed to delete employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtName.Text) || string.IsNullOrEmpty(txtPass.Text))
+            {
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private Employee CreateEmployeeFromInput()
+        {
+            return new Employee
+            {
+                Username = txtUsername.Text.Trim(),
+                FullName = txtName.Text.Trim(),
+                Password = txtPass.Text.Trim(),
+                Role = checkAdm.Checked ? "Admin" : "Employee"
+            };
+        }
+
+        private void ClearInputFields()
+        {
+            _employeeId = 0;
+            txtName.Clear();
+            txtUsername.Clear();
+            txtPass.Clear();
+            checkEmp.Checked = false;
+            checkAdm.Checked = false;
         }
     }
 }

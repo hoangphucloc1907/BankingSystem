@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:controllers\\transactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\employeeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\views\\depositview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\depositview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\views\\depositview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\depositview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\utils\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:utils\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\views\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\views\\employeeview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\employeeview.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\views\\customerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\customerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\views\\customerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\customerview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|c:\\loc\\subject\\.net\\bankingsystem\\banking\\views\\accountview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E41244FE-A884-416C-9512-DB75A8C31F81}|Banking.csproj|solutionrelative:views\\accountview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,83 +46,122 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
-              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAqwAsAAAAAAAAAAAAAAA==",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAkwJsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:27:51.627Z",
+              "WhenOpened": "2024-10-27T14:11:09.409Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Utils\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Utils\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Utils\\DatabaseHelper.cs",
-              "RelativeToolTip": "Utils\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Title": "LoginView.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\LoginView.cs",
+              "RelativeDocumentMoniker": "Views\\LoginView.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\LoginView.cs",
+              "RelativeToolTip": "Views\\LoginView.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBUAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T09:13:35.703Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Models\\Employee.cs",
-              "RelativeDocumentMoniker": "Models\\Employee.cs",
-              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Models\\Employee.cs",
-              "RelativeToolTip": "Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T08:45:06.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmployeeView.cs",
-              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\EmployeeView.cs",
-              "RelativeDocumentMoniker": "Views\\EmployeeView.cs",
-              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\EmployeeView.cs",
-              "RelativeToolTip": "Views\\EmployeeView.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAuwCgAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:52:24.057Z",
+              "WhenOpened": "2024-10-28T05:46:41.265Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "EmployeeView.cs [Design]",
-              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\EmployeeView.cs",
-              "RelativeDocumentMoniker": "Views\\EmployeeView.cs",
-              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\EmployeeView.cs [Design]",
-              "RelativeToolTip": "Views\\EmployeeView.cs [Design]",
+              "Title": "DepositView.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\DepositView.cs",
+              "RelativeDocumentMoniker": "Views\\DepositView.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\DepositView.cs",
+              "RelativeToolTip": "Views\\DepositView.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwFIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:51:39.064Z",
+              "WhenOpened": "2024-10-27T14:01:13.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DepositView.cs [Design]",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\DepositView.cs",
+              "RelativeDocumentMoniker": "Views\\DepositView.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\DepositView.cs [Design]",
+              "RelativeToolTip": "Views\\DepositView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:00:57.971Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TransactionController.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\TransactionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TransactionController.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\TransactionController.cs",
+              "RelativeToolTip": "Controllers\\TransactionController.cs",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAowLAAAAB6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T14:08:37.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AccountView.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\AccountView.cs",
+              "RelativeDocumentMoniker": "Views\\AccountView.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\AccountView.cs",
+              "RelativeToolTip": "Views\\AccountView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T13:11:54.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerView.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\CustomerView.cs",
+              "RelativeDocumentMoniker": "Views\\CustomerView.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\CustomerView.cs",
+              "RelativeToolTip": "Views\\CustomerView.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwCEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T12:48:36.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomerView.cs [Design]",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\CustomerView.cs",
+              "RelativeDocumentMoniker": "Views\\CustomerView.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\CustomerView.cs [Design]",
+              "RelativeToolTip": "Views\\CustomerView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-27T12:48:28.787Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "EmployeeView.Designer.cs",
-              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\EmployeeView.Designer.cs",
-              "RelativeDocumentMoniker": "Views\\EmployeeView.Designer.cs",
-              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Views\\EmployeeView.Designer.cs",
-              "RelativeToolTip": "Views\\EmployeeView.Designer.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAnwIYAAAAMAAAAAAAAAA==",
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Loc\\Subject\\.net\\BankingSystem\\Banking\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwDUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T09:51:10.227Z",
+              "WhenOpened": "2024-10-27T12:04:26.268Z",
               "EditorCaption": ""
             }
           ]

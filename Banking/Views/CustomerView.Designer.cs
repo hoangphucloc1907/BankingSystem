@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             groupBox2 = new GroupBox();
+            txtPhone = new TextBox();
+            label5 = new Label();
+            txtPin = new TextBox();
+            label4 = new Label();
             txtCity = new TextBox();
             label1 = new Label();
             txtEmail = new TextBox();
@@ -38,16 +42,10 @@
             label2 = new Label();
             label3 = new Label();
             dataGridViewCustomer = new DataGridView();
-            branchId = new DataGridViewTextBoxColumn();
-            branchName = new DataGridViewTextBoxColumn();
-            branchAddress = new DataGridViewTextBoxColumn();
-            branchCity = new DataGridViewTextBoxColumn();
             groupBox1 = new GroupBox();
             btnClear = new Button();
             btnDelete = new Button();
             btnSave = new Button();
-            txtPin = new TextBox();
-            label4 = new Label();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewCustomer).BeginInit();
             groupBox1.SuspendLayout();
@@ -55,6 +53,8 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(txtPhone);
+            groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(txtPin);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(txtCity);
@@ -68,13 +68,49 @@
             groupBox2.Dock = DockStyle.Top;
             groupBox2.Location = new Point(0, 0);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(2534, 143);
+            groupBox2.Size = new Size(2534, 238);
             groupBox2.TabIndex = 15;
             groupBox2.TabStop = false;
             // 
+            // txtPhone
+            // 
+            txtPhone.Location = new Point(1694, 68);
+            txtPhone.Multiline = true;
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(300, 61);
+            txtPhone.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 20F);
+            label5.Location = new Point(1488, 57);
+            label5.Name = "label5";
+            label5.Size = new Size(182, 72);
+            label5.TabIndex = 14;
+            label5.Text = "Phone";
+            // 
+            // txtPin
+            // 
+            txtPin.Location = new Point(1694, 148);
+            txtPin.Multiline = true;
+            txtPin.Name = "txtPin";
+            txtPin.Size = new Size(300, 61);
+            txtPin.TabIndex = 13;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 20F);
+            label4.Location = new Point(1488, 137);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 72);
+            label4.TabIndex = 12;
+            label4.Text = "Pin";
+            // 
             // txtCity
             // 
-            txtCity.Location = new Point(1763, 57);
+            txtCity.Location = new Point(1072, 148);
             txtCity.Multiline = true;
             txtCity.Name = "txtCity";
             txtCity.Size = new Size(300, 61);
@@ -84,7 +120,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(560, 57);
+            label1.Location = new Point(108, 148);
             label1.Name = "label1";
             label1.Size = new Size(157, 72);
             label1.TabIndex = 1;
@@ -92,7 +128,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(736, 57);
+            txtEmail.Location = new Point(313, 148);
             txtEmail.Multiline = true;
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(300, 61);
@@ -100,7 +136,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(202, 57);
+            txtName.Location = new Point(313, 57);
             txtName.Multiline = true;
             txtName.Name = "txtName";
             txtName.Size = new Size(300, 61);
@@ -110,7 +146,7 @@
             // 
             employeeIdLabel.AutoSize = true;
             employeeIdLabel.Font = new Font("Segoe UI", 20F);
-            employeeIdLabel.Location = new Point(33, 46);
+            employeeIdLabel.Location = new Point(108, 46);
             employeeIdLabel.Name = "employeeIdLabel";
             employeeIdLabel.Size = new Size(172, 72);
             employeeIdLabel.TabIndex = 0;
@@ -118,7 +154,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(1299, 57);
+            txtAddress.Location = new Point(1072, 68);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(300, 61);
@@ -128,7 +164,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(1071, 57);
+            label2.Location = new Point(812, 57);
             label2.Name = "label2";
             label2.Size = new Size(222, 72);
             label2.TabIndex = 2;
@@ -138,7 +174,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 20F);
-            label3.Location = new Point(1637, 46);
+            label3.Location = new Point(812, 137);
             label3.Name = "label3";
             label3.Size = new Size(120, 72);
             label3.TabIndex = 3;
@@ -148,37 +184,14 @@
             // 
             dataGridViewCustomer.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCustomer.Columns.AddRange(new DataGridViewColumn[] { branchId, branchName, branchAddress, branchCity });
             dataGridViewCustomer.Dock = DockStyle.Fill;
-            dataGridViewCustomer.Location = new Point(0, 143);
+            dataGridViewCustomer.Location = new Point(0, 238);
             dataGridViewCustomer.Name = "dataGridViewCustomer";
+            dataGridViewCustomer.RowHeadersVisible = false;
             dataGridViewCustomer.RowHeadersWidth = 82;
-            dataGridViewCustomer.Size = new Size(2534, 1386);
+            dataGridViewCustomer.Size = new Size(2534, 1291);
             dataGridViewCustomer.TabIndex = 16;
-            // 
-            // branchId
-            // 
-            branchId.HeaderText = "Branch Id";
-            branchId.MinimumWidth = 10;
-            branchId.Name = "branchId";
-            // 
-            // branchName
-            // 
-            branchName.HeaderText = "Branch Name";
-            branchName.MinimumWidth = 10;
-            branchName.Name = "branchName";
-            // 
-            // branchAddress
-            // 
-            branchAddress.HeaderText = "Address";
-            branchAddress.MinimumWidth = 10;
-            branchAddress.Name = "branchAddress";
-            // 
-            // branchCity
-            // 
-            branchCity.HeaderText = "City";
-            branchCity.MinimumWidth = 10;
-            branchCity.Name = "branchCity";
+            dataGridViewCustomer.CellClick += dataGridViewCustomer_CellClick;
             // 
             // groupBox1
             // 
@@ -201,6 +214,7 @@
             btnClear.TabIndex = 3;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -211,6 +225,7 @@
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnSave
             // 
@@ -221,24 +236,7 @@
             btnSave.TabIndex = 0;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
-            // 
-            // txtPin
-            // 
-            txtPin.Location = new Point(2209, 57);
-            txtPin.Multiline = true;
-            txtPin.Name = "txtPin";
-            txtPin.Size = new Size(300, 61);
-            txtPin.TabIndex = 13;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 20F);
-            label4.Location = new Point(2083, 46);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 72);
-            label4.TabIndex = 12;
-            label4.Text = "Pin";
+            btnSave.Click += btnSave_Click;
             // 
             // CustomerView
             // 
@@ -271,15 +269,13 @@
         private Label label2;
         private Label label3;
         private DataGridView dataGridViewCustomer;
-        private DataGridViewTextBoxColumn branchId;
-        private DataGridViewTextBoxColumn branchName;
-        private DataGridViewTextBoxColumn branchAddress;
-        private DataGridViewTextBoxColumn branchCity;
         private GroupBox groupBox1;
         private Button btnClear;
         private Button btnDelete;
         private Button btnSave;
         private TextBox txtPin;
         private Label label4;
+        private TextBox txtPhone;
+        private Label label5;
     }
 }

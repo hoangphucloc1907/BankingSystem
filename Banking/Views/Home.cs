@@ -136,5 +136,19 @@ namespace Banking.Views
             transactionLogView.MdiParent = this;
             transactionLogView.Show();
         }
+
+        private void createCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CustomerView customerView = new CustomerView();
+            customerView.MdiParent = this;
+            customerView.Show();
+        }
+
+        private void createAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AccountView accountView = new AccountView();
+            accountView.MdiParent = this;
+            accountView.Show();
+        }
     }
 }
